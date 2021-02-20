@@ -89,7 +89,7 @@ unix:macx { # OSX
     QT += svg
     CONFIG += c++11
 
-    #debug: CONFIG-=app_bundle
+    debug: CONFIG-=app_bundle
 
     release: DESTDIR = ./../bin/osx/release
     debug:   DESTDIR = ./../bin/osx/debug
