@@ -85,11 +85,11 @@ win32 {
 }
 
 unix:macx { # OSX
-    TARGET = "RDM"
+    TARGET = "RedisDesktopManager"
     QT += svg
     CONFIG += c++11
 
-    debug: CONFIG-=app_bundle
+    #debug: CONFIG-=app_bundle
 
     release: DESTDIR = ./../bin/osx/release
     debug:   DESTDIR = ./../bin/osx/debug
@@ -97,6 +97,8 @@ unix:macx { # OSX
     #deployment
     QMAKE_INFO_PLIST =  $$PWD/resources/Info.plist
     ICON = $$PWD/resources/rdm.icns
+
+    QMAKE_LFLAGS += "-L/usr/local/opt/gettext/lib -lpython3.9"
 }
 
 unix:!macx { # ubuntu & debian
